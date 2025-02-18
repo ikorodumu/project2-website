@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="stylepage.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
+    <!-- 네비게이션 바 -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -16,48 +19,51 @@
         </ul>
     </nav>
 
-    <header class="about-header">
+    <!-- About Me 헤더 -->
+    <header class="hero-header">
         <h1>About Me</h1>
+        <p>Learn more about me and my interests!</p>
     </header>
 
-    <section class="about-content">
-        <h2>Hello! My name is Hari Kang.</h2>
-        <p>
-            I am currently a senior majoring in Data Science. Ever since I started exploring the field, I have been fascinated by the power of data and how it can be transformed into meaningful insights. 
-            I love my major because it allows me to work with various datasets, visualize complex information in an intuitive way, and make predictions based on real-world trends. Whether it’s analyzing business data, 
-            understanding consumer behavior, or forecasting future trends, I enjoy uncovering patterns that help solve real-world problems.
-        </p>
+    <!-- 내부 탭 메뉴 -->
+    <div class="tab-container">
+        <ul class="inner-tabs">
+            <li><a href="#" class="inner-tab-link active" data-tab="bio">Biography</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="hobbies">Hobbies</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="skills">Skills</a></li>
+        </ul>
+    </div>
 
-        <h3>Why I Love Data Science</h3>
-        <p>
-            One of the aspects I find most exciting about Data Science is the ability to <strong>tell a story through data visualization</strong>. 
-            Numbers and raw data can often feel overwhelming, but when presented through clear and engaging visualizations, they become easier to interpret and can lead to more informed decision-making. 
-            Additionally, working with machine learning models to make data-driven predictions is something I am eager to explore further.
-        </p>
+    <!-- 탭 콘텐츠 -->
+    <div id="bio" class="inner-tab-content active">
+        <section class="about-content">
+            <h2>Biography</h2>
+            <p>Hello! My name is <strong>Hari Kang</strong>. I am a senior majoring in <strong>Data Science</strong>. 
+            I love my major because it allows me to visualize data, make predictions, and uncover insights.</p>
+        </section>
+    </div>
 
-        <h3>My Hobbies & Interests</h3>
-        <p>
-            Beyond academics, I have a deep passion for <strong>cooking</strong>. I love trying out new recipes and challenging myself with different cuisines every day. 
-            Cooking is not just a hobby for me—it’s a way to be creative, experiment with flavors, and share delicious meals with the people around me. I find great joy in perfecting a dish and seeing others enjoy my food.
-        </p>
-        <p>
-            In addition to cooking, I also enjoy <strong>going for walks</strong> and spending time outdoors. Walking allows me to clear my mind, relax, and appreciate the simple things in life. 
-            Whether it’s a short stroll around my neighborhood or a long walk in nature, I always feel refreshed and inspired afterward.
-        </p>
+    <div id="hobbies" class="inner-tab-content">
+        <section class="about-content">
+            <h2>Hobbies</h2>
+            <p>I enjoy cooking, trying out new recipes every day! 🥘  
+            I also love taking long walks, which helps me refresh my mind.</p>
+        </section>
+    </div>
 
-        <h3>My Future Goals</h3>
-        <p>
-            As I move forward in my academic and professional journey, I hope to combine my passion for Data Science with my personal interests. 
-            My goal is to use data-driven insights to improve people's lives, whether through technology, health analytics, or even applications in food and sustainability.
-        </p>
-        <p>
-            I am always eager to learn new things, take on challenges, and collaborate with others who share my enthusiasm for innovation and problem-solving. 
-            If you’d like to connect, feel free to explore the rest of my website!
-        </p>
-    </section>
+    <div id="skills" class="inner-tab-content">
+        <section class="about-content">
+            <h2>Skills</h2>
+            <p>✨ Data Visualization (Python, R, Tableau)<br>
+               ✨ Machine Learning Basics<br>
+               ✨ Web Development (HTML, CSS, JavaScript)</p>
+        </section>
+    </div>
 
+    <!-- 푸터 -->
     <footer>
         <p>© 2025 Hari Kang</p>
     </footer>
+
 </body>
 </html>

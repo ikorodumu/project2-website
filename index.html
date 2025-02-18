@@ -3,55 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Project 2</title>
+    <title>My Project Website</title>
     <link rel="stylesheet" href="stylepage.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
     <!-- 네비게이션 바 -->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="tech-hero.html">Tech Hero</a></li>
+            <li><a href="#" class="tab-link" data-tab="home">Home</a></li>
+            <li><a href="#" class="tab-link" data-tab="about">About Me</a></li>
+            <li><a href="#" class="tab-link" data-tab="resources">Resources</a></li>
+            <li><a href="#" class="tab-link" data-tab="tech-hero">Tech Hero</a></li>
         </ul>
     </nav>
 
-    <!-- 메인 섹션 -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Welcome to My Project 2 Website</h1>
-            <p>Explore my work, ideas, and research on implicit bias, intersectionality, and technology.</p>
-            <a href="about.html" class="btn">Learn More</a>
-        </div>
-    </header>
+    <!-- 탭 콘텐츠 -->
+    <div id="home" class="tab-content active">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Welcome to My Project 2 Website</h1>
+                <p>This is my project demo website for the class.</p>
+            </div>
+        </header>
+    </div>
 
-    <!-- 메인 컨텐츠 -->
-    <section class="content">
-        <h2>Explore My Pages</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>About Me</h3>
-                <p>Learn more about who I am and my background.</p>
-                <a href="about.html" class="btn">Visit</a>
+    <div id="about" class="tab-content">
+        <section class="about-content">
+            <h2>About Me</h2>
+            <p>Hello! My name is <strong>Hari Kang</strong>. I am a senior majoring in <strong>Data Science</strong>. 
+            I love my major because it allows me to visualize data, make predictions, and uncover insights. 
+            In my free time, I enjoy cooking (I love experimenting with new recipes every day!) and taking walks.</p>
+        </section>
+    </div>
+
+    <div id="resources" class="tab-content">
+        <section class="resource-section">
+            <h2>Understanding Implicit Bias</h2>
+            <p>Implicit bias refers to unconscious attitudes and stereotypes that influence our perceptions, actions, and decisions.</p>
+            
+            <div class="video-container">
+                <h3>🎥 Kimberlé Crenshaw: What is Intersectionality?</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ViDtnfQ9FHc" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="card">
-                <h3>Resources</h3>
-                <p>Find helpful materials on implicit bias and intersectionality.</p>
-                <a href="resources.html" class="btn">Explore</a>
+
+            <div class="video-container">
+                <h3>🎥 Implicit Bias | Concepts Unwrapped</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OoBvzI-YZf4" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="card">
-                <h3>Tech Hero</h3>
-                <p>Discover an inspiring leader in tech advocacy.</p>
-                <a href="tech-hero.html" class="btn">Read More</a>
+
+            <a href="https://implicit.harvard.edu/implicit/takeatest.html" class="btn">Take the Implicit Bias Test</a>
+        </section>
+    </div>
+
+    <div id="tech-hero" class="tab-content">
+        <section class="hero-content">
+            <h2>Tech Hero: Dr. Timnit Gebru</h2>
+            <p>Dr. Timnit Gebru is a renowned researcher in AI ethics, known for her work in uncovering bias in machine learning models.</p>
+            
+            <div class="hero-image">
+                <img src="images/timnit-gebru.jpg" alt="Dr. Timnit Gebru">
             </div>
-        </div>
-    </section>
+
+            <ul>
+                <li>🔍 Exposed racial and gender biases in AI models.</li>
+                <li>🤖 Co-authored a major study on large-scale language models.</li>
+                <li>🧑🏿‍💻 Founded <strong>Black in AI</strong> to support Black researchers in AI.</li>
+                <li>🏛️ Established the <strong>Distributed AI Research Institute (DAIR)</strong>.</li>
+            </ul>
+
+            <h3>Learn More</h3>
+            <ul>
+                <li><a href="https://www.dair-institute.org/" target="_blank">🔗 DAIR Institute</a></li>
+                <li><a href="https://blackinai.github.io/" target="_blank">🔗 Black in AI</a></li>
+                <li><a href="https://scholar.google.com/citations?user=lemnAcwAAAAJ&hl=en" target="_blank">🔗 Google Scholar</a></li>
+            </ul>
+        </section>
+    </div>
 
     <!-- 푸터 -->
     <footer>
-        <p>© 2025 Your Name</p>
+        <p>© 2025 Hari Kang</p>
     </footer>
 
 </body>
