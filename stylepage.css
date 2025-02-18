@@ -419,3 +419,19 @@ footer {
     color: white;
     margin-top: 20px;
 }
+
+가해야 할 stylepage.css 코드 (이미지 스타일링)
+css
+복사
+편집
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.hero-image {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

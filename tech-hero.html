@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Hero - Dr. Timnit Gebru</title>
+    <title>Tech Hero: Dr. Timnit Gebru</title>
     <link rel="stylesheet" href="stylepage.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- 네비게이션 바 -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -19,108 +18,69 @@
         </ul>
     </nav>
 
-    <!-- Page Header -->
+    <!-- 페이지 헤더 -->
     <header class="hero-header">
         <h1>Tech Hero: Dr. Timnit Gebru</h1>
-        <p>Learn about a leader advocating for diversity, ethics, and fairness in AI.</p>
+        <p>AI Ethics, Algorithmic Bias, and Diversity in Tech</p>
     </header>
 
-    <!-- Tab Navigation -->
+    <!-- 내부 탭 메뉴 -->
     <div class="tab-container">
         <ul class="inner-tabs">
             <li><a href="#" class="inner-tab-link active" data-tab="bio">Biography</a></li>
-            <li><a href="#" class="inner-tab-link" data-tab="work">Contributions</a></li>
-            <li><a href="#" class="inner-tab-link" data-tab="challenges">Challenges</a></li>
-            <li><a href="#" class="inner-tab-link" data-tab="resources">Learn More</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="contributions">Key Contributions</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="resources">Resources</a></li>
         </ul>
     </div>
 
-    <!-- Biography Tab -->
+    <!-- Biography Section -->
     <div id="bio" class="inner-tab-content active">
-        <section class="resource-section">
-            <h2>Biography</h2>
+        <section class="tech-hero-content">
+            <h2>Who is Dr. Timnit Gebru?</h2>
+            <div class="hero-image-container">
+                <img src="images/Timnit_Gebru_crop.jpg" alt="Dr. Timnit Gebru" class="hero-image">
+            </div>
             <p>
-                <strong>Dr. Timnit Gebru</strong> is an Ethiopian-American computer scientist and a leading researcher in artificial intelligence (AI) ethics.  
-                She is best known for her work in algorithmic bias, fairness in AI, and advocating for diversity in the tech industry.  
-                Dr. Gebru was a co-leader of the Ethical AI team at Google and has made significant contributions to identifying racial and gender biases in AI systems.
+                Dr. Timnit Gebru is a computer scientist renowned for her groundbreaking work in <strong>AI ethics, algorithmic bias, and diversity in tech</strong>.
+                As a co-founder of <strong>Black in AI</strong>, she has been a strong advocate for inclusion and equity in artificial intelligence research and industry.
             </p>
             <p>
-                She earned her Ph.D. from Stanford University, where she focused on computer vision applications and the societal impacts of AI.  
-                Her groundbreaking research has challenged mainstream AI narratives and exposed systemic issues in data-driven technologies.
+                She previously worked as a researcher at Google AI and co-authored a pivotal paper on <strong>bias in large-scale language models</strong>,
+                highlighting the dangers of unregulated AI development. Following her controversial departure from Google, she founded the 
+                <strong>Distributed AI Research Institute (DAIR)</strong> to promote independent research in AI ethics.
             </p>
         </section>
     </div>
 
-    <!-- Contributions Tab -->
-    <div id="work" class="inner-tab-content">
-        <section class="resource-section">
+    <!-- Key Contributions -->
+    <div id="contributions" class="inner-tab-content">
+        <section class="tech-hero-content">
             <h2>Key Contributions</h2>
-            <p>Dr. Timnit Gebru has contributed significantly to AI ethics, fairness, and bias detection. Some of her notable work includes:</p>
-
-            <div class="bias-example">
-                <h3>1. Algorithmic Bias Research</h3>
-                <p>Dr. Gebru co-authored a seminal paper analyzing racial and gender bias in facial recognition technologies,  
-                revealing how AI systems disproportionately misidentify people of color and women.</p>
-            </div>
-
-            <div class="bias-example">
-                <h3>2. Large Language Model Criticism</h3>
-                <p>She co-authored a paper critically analyzing the risks of large-scale AI models (like GPT-3),  
-                discussing their environmental impact and potential for misinformation.</p>
-            </div>
-
-            <div class="bias-example">
-                <h3>3. Advocating for Diversity in Tech</h3>
-                <p>Dr. Gebru co-founded <a href="https://blackinai.github.io/" target="_blank">Black in AI</a>,  
-                an organization dedicated to increasing the representation of Black researchers in artificial intelligence.</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- Challenges Tab -->
-    <div id="challenges" class="inner-tab-content">
-        <section class="resource-section">
-            <h2>Challenges & Controversies</h2>
-            <p>
-                Despite her groundbreaking research, Dr. Gebru has faced significant resistance from major tech companies.
-            </p>
-
-            <div class="bias-example">
-                <h3>1. Departure from Google</h3>
-                <p>In 2020, Dr. Gebru was controversially fired from Google after raising concerns about the ethical implications of AI models.  
-                Her dismissal sparked global discussions on ethics, corporate accountability, and diversity in tech.</p>
-            </div>
-
-            <div class="bias-example">
-                <h3>2. Industry Pushback</h3>
-                <p>Her outspoken stance on AI fairness has led to backlash from corporations resistant to discussing biases embedded in their AI systems.</p>
-            </div>
-
-            <div class="bias-example">
-                <h3>3. Continuing Advocacy</h3>
-                <p>Despite these challenges, Dr. Gebru continues to push for ethical AI development and policies that protect marginalized communities.</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- Learn More Tab -->
-    <div id="resources" class="inner-tab-content">
-        <section class="resource-section">
-            <h2>Learn More</h2>
-            <p>Explore Dr. Timnit Gebru's work and research through these resources:</p>
             <ul>
-                <li><a href="https://scholar.google.com/citations?user=lemnAcwAAAAJ&hl=en" target="_blank">Google Scholar: Dr. Timnit Gebru</a></li>
-                <li><a href="https://blackinai.github.io/" target="_blank">Black in AI: Community for Black Researchers</a></li>
-                <li><a href="https://www.technologyreview.com/2021/06/08/1025650/timnit-gebru-google-ai-ethics-fired-launches-new-research-institute/" target="_blank">MIT Technology Review: Dr. Gebru's Work on AI Ethics</a></li>
-                <li><a href="https://www.wired.com/story/ai-researcher-timnit-gebru-left-google-started-new-institute/" target="_blank">WIRED: Dr. Gebru’s New AI Ethics Institute</a></li>
+                <li>🔍 <strong>Exposed racial and gender biases in AI models</strong>.</li>
+                <li>🤖 <strong>Co-authored a landmark paper</strong> on the risks of large-scale language models.</li>
+                <li>📢 Advocated for <strong>equity and transparency in AI ethics</strong>.</li>
+                <li>🌍 Founded <strong>DAIR Institute</strong> to promote independent AI research outside of big tech corporations.</li>
             </ul>
         </section>
     </div>
 
-    <!-- Footer -->
+    <!-- Additional Resources -->
+    <div id="resources" class="inner-tab-content">
+        <section class="tech-hero-content">
+            <h2>Resources & Links</h2>
+            <ul>
+                <li>📚 <a href="https://scholar.google.com/citations?user=lemnAcwAAAAJ&hl=en" target="_blank">Google Scholar - Dr. Timnit Gebru</a></li>
+                <li>🌐 <a href="https://www.dair-institute.org/team/" target="_blank">DAIR Institute - Official Website</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- 푸터 -->
     <footer>
         <p>© 2025 Hari Kang</p>
     </footer>
 
+    <script defer src="script.js"></script>
 </body>
 </html>
