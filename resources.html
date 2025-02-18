@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources on Implicit Bias & Intersectionality</title>
     <link rel="stylesheet" href="stylepage.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- 네비게이션 바 -->
+    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -18,85 +19,125 @@
         </ul>
     </nav>
 
-    <!-- 페이지 헤더 -->
+    <!-- Page Header -->
     <header class="resource-header">
         <h1>Understanding Intersectionality & Implicit Bias</h1>
-        <p>Explore key concepts, take the Implicit Bias Test, and watch insightful discussions.</p>
+        <p>Explore key concepts, real-world examples, and ways to address unconscious bias.</p>
     </header>
 
-    <!-- Intersectionality Section -->
-    <section class="resource-section">
-        <h2>What is Intersectionality?</h2>
-        <p>
-            The term <strong>Intersectionality</strong> was coined by legal scholar <strong>Kimberlé Crenshaw</strong> to describe how various forms of discrimination—such as racism, sexism, classism, and ableism—overlap and intersect, creating unique experiences of oppression and privilege.
-        </p>
-        <p>
-            Intersectionality helps us understand that individuals are not affected by a single axis of identity, but rather by the complex interactions of multiple social categories.
-        </p>
-
-        <!-- Kimberlé Crenshaw Video -->
-        <div class="video-container">
-            <h3>🎥 Kimberlé Crenshaw: What is Intersectionality?</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ViDtnfQ9FHc" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- Implicit Bias Section -->
-    <section class="resource-section">
-        <h2>What is Implicit Bias?</h2>
-        <p>
-            <strong>Implicit Bias</strong> refers to unconscious attitudes or stereotypes that affect our understanding, actions, and decisions in an automatic way. These biases develop over time through cultural exposure, socialization, and media influence, often without our conscious awareness.
-        </p>
-        <p>
-            Unlike explicit biases, which people are aware of, implicit biases operate beneath the surface, shaping our behaviors in subtle yet powerful ways.
-        </p>
-    </section>
-
-    <!-- Implicit Bias Video Section -->
-    <section class="resource-section">
-        <h2>Learn More About Implicit Bias</h2>
-
-        <!-- Implicit Bias | Concepts Unwrapped -->
-        <div class="video-container">
-            <h3>🎥 Implicit Bias | Concepts Unwrapped</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OoBvzI-YZf4" frameborder="0" allowfullscreen></iframe>
-            <p>
-                This video from McCombs School of Business explains how implicit bias works, why we all have it, and how it influences our everyday decisions in ways we may not realize.
-            </p>
-        </div>
-
-        <!-- TEDx Talk: We all have implicit biases. So what can we do about it? -->
-        <div class="video-container">
-            <h3>🎥 We All Have Implicit Biases. So What Can We Do About It?</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kKHSJHkPeLY" frameborder="0" allowfullscreen></iframe>
-            <p>
-                In this TEDx talk, Dushaw Hockett explores strategies for recognizing and addressing implicit biases, showing how self-awareness and deliberate action can lead to a more inclusive world.
-            </p>
-        </div>
-    </section>
-
-    <!-- Implicit Bias Test Section -->
-    <section class="resource-section">
-        <h2>Take the Implicit Bias Test (IBT)</h2>
-        <p>
-            The <strong>Implicit Association Test (IAT)</strong>, developed by researchers at Harvard University, measures implicit biases by analyzing how quickly individuals associate positive or negative words with certain groups.
-        </p>
-        <p>
-            You can take the test yourself to explore your own unconscious biases and gain awareness of how they may influence your perceptions and decisions.
-        </p>
-        <a href="https://implicit.harvard.edu/implicit/takeatest.html" class="btn">Take the Test</a>
-    </section>
-
-    <!-- Additional Resources -->
-    <section class="resource-section">
-        <h2>Additional Resources</h2>
-        <ul>
-            <li><a href="https://www.ted.com/talks/verna_myers_how_to_overcome_our_biases_walk_boldly_toward_them">TED Talk: How to Overcome Our Biases</a></li>
-            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5333436/">Implicit Bias in Healthcare Research</a></li>
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <ul class="inner-tabs">
+            <li><a href="#" class="inner-tab-link active" data-tab="intersectionality">Intersectionality</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="implicit-bias">Implicit Bias</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="examples">Examples</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="resources">Resources</a></li>
         </ul>
-    </section>
+    </div>
 
-    <!-- 푸터 -->
+    <!-- Intersectionality Tab -->
+    <div id="intersectionality" class="inner-tab-content active">
+        <section class="resource-section">
+            <h2>What is Intersectionality?</h2>
+            <p>
+                The term <strong>Intersectionality</strong> was coined by legal scholar <strong>Kimberlé Crenshaw</strong> to describe how multiple forms of discrimination—such as racism, sexism, classism, and ableism—overlap and create unique experiences of oppression and privilege.
+            </p>
+            <p>
+                Understanding intersectionality is crucial because it shows that individuals are not affected by a single identity but rather by the interconnected nature of various social categories.
+            </p>
+
+            <!-- Video -->
+            <div class="video-container">
+                <h3>🎥 Kimberlé Crenshaw: What is Intersectionality?</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ViDtnfQ9FHc" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+    </div>
+
+    <!-- Implicit Bias Tab -->
+    <div id="implicit-bias" class="inner-tab-content">
+        <section class="resource-section">
+            <h2>What is Implicit Bias?</h2>
+            <p>
+                <strong>Implicit Bias</strong> refers to unconscious attitudes, stereotypes, and preferences that influence our judgments and behaviors toward others, often without our awareness.
+            </p>
+            <p>
+                These biases are shaped by cultural norms, media exposure, and personal experiences. Unlike explicit bias, which is deliberate and conscious, implicit bias operates subconsciously and affects real-world decisions, including hiring, policing, healthcare, and education.
+            </p>
+
+            <!-- Videos -->
+            <div class="video-container">
+                <h3>🎥 Implicit Bias | Concepts Unwrapped</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OoBvzI-YZf4" frameborder="0" allowfullscreen></iframe>
+                <p>
+                    This video from McCombs School of Business explores how implicit bias shapes our thinking and decision-making.
+                </p>
+            </div>
+
+            <div class="video-container">
+                <h3>🎥 We All Have Implicit Biases. So What Can We Do About It?</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kKHSJHkPeLY" frameborder="0" allowfullscreen></iframe>
+                <p>
+                    In this TEDx talk, Dushaw Hockett discusses actionable strategies for recognizing and reducing implicit bias in our daily lives.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Examples Tab -->
+    <div id="examples" class="inner-tab-content">
+        <section class="resource-section">
+            <h2>Examples of Implicit Bias</h2>
+
+            <div class="bias-example">
+                <h3>1. Gender Bias</h3>
+                <p>Women are often overlooked for leadership positions despite having equal qualifications as men.</p>
+            </div>
+
+            <div class="bias-example">
+                <h3>2. Confirmation Bias</h3>
+                <p>Assuming a coworker is lazy based on one instance of missed deadlines and only noticing actions that confirm this belief.</p>
+            </div>
+
+            <div class="bias-example">
+                <h3>3. Racial Bias in Healthcare</h3>
+                <p>Studies show that Black patients are often prescribed less pain medication than White patients due to implicit biases in pain perception.</p>
+            </div>
+
+            <div class="bias-example">
+                <h3>4. Beauty Bias</h3>
+                <p>Attractive individuals may be perceived as more competent or intelligent, leading to preferential treatment.</p>
+            </div>
+
+            <div class="bias-example">
+                <h3>5. Age Bias</h3>
+                <p>Older employees may be seen as less capable of adapting to new technologies, while younger employees may be considered inexperienced.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Resources Tab -->
+    <div id="resources" class="inner-tab-content">
+        <section class="resource-section">
+            <h2>Take the Implicit Bias Test (IBT)</h2>
+            <p>
+                The <strong>Implicit Association Test (IAT)</strong>, developed by researchers at Harvard University, helps measure unconscious biases by analyzing response times to different stimuli.
+            </p>
+            <p>
+                You can take the test yourself to gain awareness of your biases and understand how they might influence your perceptions.
+            </p>
+            <a href="https://implicit.harvard.edu/implicit/takeatest.html" class="btn">Take the Test</a>
+
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://www.ted.com/talks/verna_myers_how_to_overcome_our_biases_walk_boldly_toward_them">TED Talk: How to Overcome Our Biases</a></li>
+                <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5333436/">Implicit Bias in Healthcare Research</a></li>
+                <li><a href="https://coachdiversity.com/blog/implicit-bias-in-the-workplace/">Implicit Bias in the Workplace</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <p>© 2025 Hari Kang</p>
     </footer>
