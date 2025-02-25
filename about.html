@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="stylepage.css">
     <script defer src="script.js"></script>
+    <style>
+        .profile-img {
+            width: 150px; /* 통일된 크기 적용 */
+            height: 150px; /* 통일된 크기 적용 */
+            object-fit: cover; /* 이미지 비율 유지하며 크롭 */
+            border-radius: 50%; /* 원형으로 표시 */
+            display: block;
+            margin: 0 auto 15px;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,75 +23,55 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="tech-hero.html">Tech Hero</a></li>
         </ul>
     </nav>
 
-    <!-- About Me 헤더 -->
+    <!-- About Us 헤더 -->
     <header class="hero-header">
-        <h1>About Me</h1>
-        <p>Learn more about me and my interests!</p>
+        <h1>About Us</h1>
+        <p>Meet the team behind this project!</p>
     </header>
 
     <!-- 내부 탭 메뉴 -->
     <div class="tab-container">
         <ul class="inner-tabs">
-            <li><a href="#" class="inner-tab-link active" data-tab="bio">Biography</a></li>
-            <li><a href="#" class="inner-tab-link" data-tab="hobbies">Hobbies</a></li>
-            <li><a href="#" class="inner-tab-link" data-tab="skills">Skills</a></li>
+            <li><a href="#" class="inner-tab-link active" data-tab="noa">Noa</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="muiz">Muiz</a></li>
+            <li><a href="#" class="inner-tab-link" data-tab="hari">Hari</a></li>
         </ul>
     </div>
 
     <!-- 탭 콘텐츠 -->
-    <div id="bio" class="inner-tab-content active">
+    <div id="noa" class="inner-tab-content active">
         <section class="about-content">
-            <h2>Biography</h2>
-            <p>Hello! My name is <strong>Hari Kang</strong>. I am currently a senior majoring in <strong>Data Science</strong>.  
-            Ever since I started exploring the field, I have been fascinated by the power of data and how it can be transformed into meaningful insights.  
-            I love my major because it allows me to work with various datasets, visualize complex information in an intuitive way, and make predictions based on real-world trends.</p>
-
-            <p>One of the aspects I find most exciting about Data Science is the ability to tell a story through data visualization.  
-            Numbers and raw data can often feel overwhelming, but when presented through clear and engaging visualizations, they become easier to interpret and can lead to more informed decision-making.  
-            Additionally, working with machine learning models to make data-driven predictions is something I am eager to explore further.</p>
-
-            <p>As I move forward in my academic and professional journey, I hope to combine my passion for Data Science with my personal interests.  
-            My goal is to use data-driven insights to improve people's lives, whether through technology, health analytics, or even applications in food and sustainability.</p>
-
-            <p>I am always eager to learn new things, take on challenges, and collaborate with others who share my enthusiasm for innovation and problem-solving.  
-            If you’d like to connect, feel free to explore the rest of my website!</p>
+            <h2>Noa Levine</h2>
+            <img src="images/Noa.jpg" alt="Noa Levine" class="profile-img">
+            <p>Hi, my name is Noa Levine, and I am originally from New Jersey. I am a junior at UW-Madison studying Consumer Behavior and Marketplace Studies as well as Information Science. I am currently studying abroad in Madrid for the semester, which speaks to my love for exploring new things. From trying new foods and activities to thrift shopping to spending time with friends, I love to fill my time with things that bring me joy. I love going to the beach and hanging out with any dog, specifically my dog Chester. I’m the founder of Set Me Up, a college concierge and organizing service. I help students navigate their transition to college life, making things like organization and settling in a lot easier. I’m always on the lookout for exciting activities and new experiences.</p>
         </section>
     </div>
 
-    <div id="hobbies" class="inner-tab-content">
+    <div id="muiz" class="inner-tab-content">
         <section class="about-content">
-            <h2>Hobbies</h2>
-            <p>Beyond academics, I have a deep passion for <strong>cooking</strong>. I love trying out new recipes and challenging myself with different cuisines every day.  
-            Cooking is not just a hobby for me—it’s a way to be creative, experiment with flavors, and share delicious meals with the people around me.</p>
-
-            <p>In addition to cooking, I also enjoy <strong>going for walks and spending time outdoors</strong>.  
-            Walking allows me to clear my mind, relax, and appreciate the simple things in life.  
-            Whether it’s a short stroll around my neighborhood or a long walk in nature, I always feel refreshed and inspired afterward.</p>
+            <h2>Muiz Aminu</h2>
+            <img src="images/Muiz1.jpg" alt="Muiz Aminu" class="profile-img">
+            <p>Hello, my name is Muiz Aminu. I am a senior at the University of Wisconsin-Madison majoring in Information Science. I was born in Nigeria and moved to Chicago in 2012. I enjoy reading fictional books, and my favorite author is James Patterson. I have a cat named Eira who is almost 2 years old. I enjoy creating websites and putting my HTML and CSS skills to the test.</p>
         </section>
     </div>
 
-    <div id="skills" class="inner-tab-content">
+    <div id="hari" class="inner-tab-content">
         <section class="about-content">
-            <h2>Skills</h2>
-            <p>Here are some of the skills I've developed through my studies and projects:</p>
-            <ul>
-                <li>✨ <strong>Data Visualization</strong> (Python, R, Tableau)</li>
-                <li>✨ <strong>Machine Learning</strong> (Regression, Classification, Clustering)</li>
-                <li>✨ <strong>Web Development</strong> (HTML, CSS, JavaScript, Django)</li>
-                <li>✨ <strong>Database Management</strong> (SQL, MySQL, MongoDB)</li>
-            </ul>
+            <h2>Hari Kang</h2>
+            <img src="images/Hari.jpg" alt="Hari Kang" class="profile-img">
+            <p>Hello! My name is Hari Kang. I am currently a senior majoring in Data Science. Ever since I started exploring the field, I have been fascinated by the power of data and how it can be transformed into meaningful insights. I love my major because it allows me to work with various datasets, visualize complex information in an intuitive way, and make predictions based on real-world trends. One of the aspects I find most exciting about Data Science is the ability to tell a story through data visualization. Numbers and raw data can often feel overwhelming, but when presented through clear and engaging visualizations, they become easier to interpret and can lead to more informed decision-making. Additionally, working with machine learning models to make data-driven predictions is something I am eager to explore further. As I move forward in my academic and professional journey, I hope to combine my passion for Data Science with my personal interests. My goal is to use data-driven insights to improve people's lives, whether through technology, health analytics, or even applications in food and sustainability. I am always eager to learn new things, take on challenges, and collaborate with others who share my enthusiasm for innovation and problem-solving. If you’d like to connect, feel free to explore the rest of our website!</p>
         </section>
     </div>
 
     <!-- 푸터 -->
     <footer>
-        <p>© 2025 Hari Kang</p>
+        <p>© 2025 Our Website | Muiz Aminu, Noa Levine, Hari Kang</p>
     </footer>
 
 </body>
