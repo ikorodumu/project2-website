@@ -134,32 +134,35 @@
     <p>© 2025 Our Website | Muiz Aminu, Noa Levine, Hari Kang</p>
   </footer>
 
- <!-- Scripts for model functionality -->
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest"></script>
 <script>
+  const tmImage = window.tmImage;
   const URL = "https://teachablemachine.withgoogle.com/models/ndVbPy1ak/";
+
   let model, webcam, labelContainer, maxPredictions;
 
   async function init() {
-    console.log("init() called"); // Debug log
-
+    console.log("init() called");
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
     try {
+      console.log("Loading model...");
       model = await tmImage.load(modelURL, metadataURL);
       maxPredictions = model.getTotalClasses();
+      console.log("Model loaded");
 
       const flip = true;
       webcam = new tmImage.Webcam(200, 200, flip);
-      await webcam.setup();
+      console.log("Setting up webcam...");
+      await webcam.setup(); // This line will trigger error if camera is blocked
       await webcam.play();
+      console.log("Webcam started");
+
       window.requestAnimationFrame(loop);
 
       document.getElementById("webcam-container").appendChild(webcam.canvas);
       labelContainer = document.getElementById("label-container");
-      labelContainer.innerHTML = ""; // Clear previous
+      labelContainer.innerHTML = "";
       for (let i = 0; i < maxPredictions; i++) {
         labelContainer.appendChild(document.createElement("div"));
       }
@@ -184,6 +187,7 @@
     }
   }
 </script>
+
 
 </body>
 </html>
