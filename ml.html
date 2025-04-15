@@ -183,6 +183,22 @@
   }
 </script>
 
+<script>
+  document.querySelectorAll('.inner-tab-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Remove 'active' class from all links and tabs
+      document.querySelectorAll('.inner-tab-link').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.inner-tab-content').forEach(tab => tab.classList.remove('active'));
+
+      // Add 'active' class to clicked tab and matching content
+      this.classList.add('active');
+      const tabId = this.getAttribute('data-tab');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+</script>
 
 
 
