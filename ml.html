@@ -49,16 +49,57 @@
     </section>
 
     <section class="video-container">
-      <h2>🧠 Teachable Machine Classifier</h2>
-      <!-- 🔽 여기에 TM 모델 embed 링크 넣어주세요 -->
-      <iframe src="여기에_TeachableMachine_embed_URL_넣기" 
-              width="100%" 
-              height="500px" 
-              frameborder="0" 
-              allow="camera; microphone" 
-              allowfullscreen>
-      </iframe>
+      <h2>Teachable Machine Classifier</h2>
+      <div>Teachable Machine Image Model</div>
+      <button type="button" onclick="init()">Start</button>
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
     </section>
+
+    <!-- Scripts for model functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+      const tmImage = window.tmImage;
+      const URL = "https://teachablemachine.withgoogle.com/models/ndVbPy1ak/";
+
+      let model, webcam, labelContainer, maxPredictions;
+
+      async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        const flip = true;
+        webcam = new tmImage.Webcam(200, 200, flip);
+        await webcam.setup();
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) {
+          labelContainer.appendChild(document.createElement("div"));
+        }
+      }
+
+      async function loop() {
+        webcam.update();
+        await predict();
+        window.requestAnimationFrame(loop);
+      }
+
+      async function predict() {
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+          const classPrediction =
+            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+          labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+      }
+    </script>
   </div>
 
   <!-- 탭 2: Statement -->
@@ -85,7 +126,6 @@
       </p>
     </section>
   </div>
-
 
   <!-- 탭 3: Extended Reflection -->
   <div id="reflection" class="inner-tab-content">
@@ -124,13 +164,13 @@
   <!-- 탭 4: Challenges -->
   <div id="challenges" class="inner-tab-content">
     <section class="content">
-      <h2>🚧 Challenges & Ethical Questions</h2>
+      <h2>Challenges & Ethical Questions</h2>
       <ul style="text-align: left;">
-        <li>📷 Lighting consistency across skin tones</li>
-        <li>📊 Small sample size and risk of overfitting</li>
-        <li>🧠 Subjectivity in Monk Skin Tone label assignments</li>
-        <li>⚖️ Ethical concerns of skin tone classification in surveillance or hiring</li>
-        <li>📸 Webcam quality and facial orientation influencing accuracy</li>
+        <li>Lighting consistency across skin tones</li>
+        <li>Small sample size and risk of overfitting</li>
+        <li>Subjectivity in Monk Skin Tone label assignments</li>
+        <li>Ethical concerns of skin tone classification in surveillance or hiring</li>
+        <li>Webcam quality and facial orientation influencing accuracy</li>
       </ul>
     </section>
   </div>
