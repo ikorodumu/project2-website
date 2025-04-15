@@ -172,19 +172,23 @@
     }
   }
 
-  async function loop() {
-    webcam.update();
-    await predict();
-    window.requestAnimationFrame(loop);
-  }
-
   async function predict() {
-    const prediction = await model.predict(webcam.canvas);
-    for (let i = 0; i < maxPredictions; i++) {
-      const classPrediction =
-        prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-      labelContainer.childNodes[i].innerHTML = classPrediction;
-    }
+  const prediction = await model.predict(webcam.canvas);
+  
+  // Find the prediction with the highest probability
+  const topPrediction = prediction.reduce((best, current) => {
+    return current.probability > best.probability ? current : best;
+  });
+
+  // Display it nicely
+  labelContainer.innerHTML = `
+    <div class="top-result">
+      <strong>${topPrediction.className}</strong><br>
+      Confidence: ${(topPrediction.probability * 100).toFixed(1)}%
+    </div>
+  `;
+}
+
   }
 </script>
 
