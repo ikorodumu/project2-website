@@ -172,26 +172,22 @@
     }
   }
 
-async function predict() {
-  const prediction = await model.predict(webcam.canvas);
+  async function loop() {
+    webcam.update();
+    await predict();
+    window.requestAnimationFrame(loop);
+  }
 
-  // Get the most confident prediction
-  const topPrediction = prediction.reduce((prev, current) => {
-    return current.probability > prev.probability ? current : prev;
-  });
-
-  // Display only that one
-  labelContainer.innerHTML = `
-    <div class="top-result">
-      <strong>${topPrediction.className}</strong><br>
-      Confidence: ${(topPrediction.probability * 100).toFixed(1)}%
-    </div>
-  `;
-}
-
-
+  async function predict() {
+    const prediction = await model.predict(webcam.canvas);
+    for (let i = 0; i < maxPredictions; i++) {
+      const classPrediction =
+        prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+      labelContainer.childNodes[i].innerHTML = classPrediction;
+    }
   }
 </script>
+
 
 
 
