@@ -160,12 +160,12 @@
       await webcam.play();
       window.requestAnimationFrame(loop);
 
+      document.getElementById("webcam-container").appendChild(webcam.canvas);
       labelContainer = document.getElementById("label-container");
-labelContainer.innerHTML = "";
-for (let i = 0; i < maxPredictions; i++) {
-  labelContainer.appendChild(document.createElement("div"));
-}
-
+      labelContainer.innerHTML = "";
+      for (let i = 0; i < maxPredictions; i++) {
+        labelContainer.appendChild(document.createElement("div"));
+      }
     } catch (error) {
       console.error("Webcam or model loading failed:", error);
       alert("Could not start model. Check if camera permissions are allowed and you're using HTTPS.");
@@ -175,12 +175,12 @@ for (let i = 0; i < maxPredictions; i++) {
 async function predict() {
   const prediction = await model.predict(webcam.canvas);
 
-  // Find the top prediction
-  const topPrediction = prediction.reduce((best, current) =>
-    current.probability > best.probability ? current : best
-  );
+  // Get the most confident prediction
+  const topPrediction = prediction.reduce((prev, current) => {
+    return current.probability > prev.probability ? current : prev;
+  });
 
-  // Display just the top result
+  // Display only that one
   labelContainer.innerHTML = `
     <div class="top-result">
       <strong>${topPrediction.className}</strong><br>
@@ -188,7 +188,6 @@ async function predict() {
     </div>
   `;
 }
-
 
 
   }
@@ -199,4 +198,3 @@ async function predict() {
 
 </body>
 </html>
-
