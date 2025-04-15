@@ -134,19 +134,20 @@
     <p>© 2025 Our Website | Muiz Aminu, Noa Levine, Hari Kang</p>
   </footer>
 
-  <!-- Scripts for model functionality -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-  <script>
-    const tmImage = window.tmImage;
-    const URL = "https://teachablemachine.withgoogle.com/models/ndVbPy1ak/";
+ <!-- Scripts for model functionality -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest"></script>
+<script>
+  const URL = "https://teachablemachine.withgoogle.com/models/ndVbPy1ak/";
+  let model, webcam, labelContainer, maxPredictions;
 
-    let model, webcam, labelContainer, maxPredictions;
+  async function init() {
+    console.log("init() called"); // Debug log
 
-    async function init() {
-      const modelURL = URL + "model.json";
-      const metadataURL = URL + "metadata.json";
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
 
+    try {
       model = await tmImage.load(modelURL, metadataURL);
       maxPredictions = model.getTotalClasses();
 
@@ -158,26 +159,32 @@
 
       document.getElementById("webcam-container").appendChild(webcam.canvas);
       labelContainer = document.getElementById("label-container");
+      labelContainer.innerHTML = ""; // Clear previous
       for (let i = 0; i < maxPredictions; i++) {
         labelContainer.appendChild(document.createElement("div"));
       }
+    } catch (error) {
+      console.error("Webcam or model loading failed:", error);
+      alert("Could not start model. Check if camera permissions are allowed and you're using HTTPS.");
     }
+  }
 
-    async function loop() {
-      webcam.update();
-      await predict();
-      window.requestAnimationFrame(loop);
-    }
+  async function loop() {
+    webcam.update();
+    await predict();
+    window.requestAnimationFrame(loop);
+  }
 
-    async function predict() {
-      const prediction = await model.predict(webcam.canvas);
-      for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction =
-          prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        labelContainer.childNodes[i].innerHTML = classPrediction;
-      }
+  async function predict() {
+    const prediction = await model.predict(webcam.canvas);
+    for (let i = 0; i < maxPredictions; i++) {
+      const classPrediction =
+        prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+      labelContainer.childNodes[i].innerHTML = classPrediction;
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
 
