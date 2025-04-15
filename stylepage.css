@@ -244,4 +244,17 @@ footer {
   display: block;
 }
 
+.inner-tab-content {
+  display: none;
+}
+
+.inner-tab-content.active {
+  display: block;
+}
+
+.inner-tab-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 
