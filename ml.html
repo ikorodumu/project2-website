@@ -184,21 +184,29 @@
 </script>
 
 <script>
-  document.querySelectorAll('.inner-tab-link').forEach(link => {
+  // Handle tab switching
+  const tabLinks = document.querySelectorAll('.inner-tab-link');
+  const tabContents = document.querySelectorAll('.inner-tab-content');
+
+  tabLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
 
-      // Remove 'active' class from all links and tabs
-      document.querySelectorAll('.inner-tab-link').forEach(l => l.classList.remove('active'));
-      document.querySelectorAll('.inner-tab-content').forEach(tab => tab.classList.remove('active'));
+      // Remove 'active' class from all links and contents
+      tabLinks.forEach(link => link.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
 
-      // Add 'active' class to clicked tab and matching content
+      // Add 'active' class to the clicked tab and corresponding content
       this.classList.add('active');
-      const tabId = this.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
+      const target = this.getAttribute('data-tab');
+      const activeTab = document.getElementById(target);
+      if (activeTab) {
+        activeTab.classList.add('active');
+      }
     });
   });
 </script>
+
 
 
 
