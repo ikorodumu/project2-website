@@ -6,6 +6,8 @@
   <title>Teachable Skin – Machine Learning Project</title>
   <link rel="stylesheet" href="stylepage.css" />
   <script defer src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
 
@@ -60,6 +62,14 @@
       </iframe>
     </section>
   </div>
+
+  <h3>Try Our Model</h3>
+<div id="model-container">
+  <p>Hold your face in the camera</p>
+  <button type="button" class="webcam-btn" onclick="init()">Start Webcam</button>
+  <div id="webcam-container"></div>
+  <div id="label-container"></div>
+</div>
 
   <!-- 탭 2: Statement -->
   <div id="statement" class="inner-tab-content">
@@ -124,13 +134,13 @@
   <!-- 탭 4: Challenges -->
   <div id="challenges" class="inner-tab-content">
     <section class="content">
-      <h2>🚧 Challenges & Ethical Questions</h2>
+      <h2>Challenges & Ethical Questions</h2>
       <ul style="text-align: left;">
-        <li>📷 Lighting consistency across skin tones</li>
-        <li>📊 Small sample size and risk of overfitting</li>
-        <li>🧠 Subjectivity in Monk Skin Tone label assignments</li>
-        <li>⚖️ Ethical concerns of skin tone classification in surveillance or hiring</li>
-        <li>📸 Webcam quality and facial orientation influencing accuracy</li>
+        <li>Lighting consistency across skin tones</li>
+        <li>Small sample size and risk of overfitting</li>
+        <li>Subjectivity in Monk Skin Tone label assignments</li>
+        <li>Ethical concerns of skin tone classification in surveillance or hiring</li>
+        <li>Webcam quality and facial orientation influencing accuracy</li>
       </ul>
     </section>
   </div>
