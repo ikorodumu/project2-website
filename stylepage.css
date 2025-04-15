@@ -226,3 +226,14 @@ footer {
 .inner-tab-content.active {
     display: block;
 }
+.top-result {
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+}
+
