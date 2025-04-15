@@ -172,15 +172,15 @@
     }
   }
 
-  async function predict() {
+async function predict() {
   const prediction = await model.predict(webcam.canvas);
-  
-  // Find the prediction with the highest probability
-  const topPrediction = prediction.reduce((best, current) => {
-    return current.probability > best.probability ? current : best;
+
+  // Get the most confident prediction
+  const topPrediction = prediction.reduce((prev, current) => {
+    return current.probability > prev.probability ? current : prev;
   });
 
-  // Display it nicely
+  // Display only that one
   labelContainer.innerHTML = `
     <div class="top-result">
       <strong>${topPrediction.className}</strong><br>
@@ -188,6 +188,7 @@
     </div>
   `;
 }
+
 
   }
 </script>
