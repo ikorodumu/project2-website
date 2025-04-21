@@ -144,6 +144,7 @@
   async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
+    let count = 0;
 
     try {
       model = await tmImage.load(modelURL, metadataURL);
@@ -155,11 +156,14 @@
       await webcam.play();
       window.requestAnimationFrame(loop);
 
-      document.getElementById("webcam-container").appendChild(webcam.canvas);
-      labelContainer = document.getElementById("label-container");
-      labelContainer.innerHTML = "";
+      if (count < 1) {
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        labelContainer.innerHTML = "";
+      }
+      
       for (let i = 0; i < maxPredictions; i++) {
-        labelContainer.appendChild(document.createElement("div"));
+          labelContainer.appendChild(document.createElement("div"));
       }
     } catch (error) {
       console.error("Webcam or model loading failed:", error);
