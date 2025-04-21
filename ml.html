@@ -38,7 +38,7 @@
   <!-- 탭 1: 메들 데모 -->
   <div id="demo" class="inner-tab-content active">
     <section class="video-container">
-      <h2>🎥 Model Demonstration</h2>
+      <h2>Model Demonstration</h2>
       <iframe width="560" height="315"
               src="https://www.youtube.com/embed/3Z7swx6gicw"
               frameborder="0"
@@ -48,8 +48,8 @@
     </section>
 
     <section class="video-container">
-      <h2>Teachable Machine Classifier</h2>
-      <div>Teachable Machine Image Model</div>
+      <h2>Teachable Machine</h2>
+      <div>Skin Tone Classifier</div>
       <button type="button" onclick="init()">Start</button>
       <div id="webcam-container"></div>
       <div id="label-container"></div>
@@ -59,7 +59,7 @@
   <!-- 탭 2: Statement -->
   <div id="statement" class="inner-tab-content">
     <section class="content">
-      <h2>📝 Project Statement</h2>
+      <h2>Project Statement</h2>
       <p>
         Our group decided to create an image-based classification algorithm using Google’s Teachable Machines to detect and categorize different human skin tones. This project was inspired by Joy Buolamwini’s <em>Unmasking AI</em>, which powerfully critiques how artificial intelligence, particularly facial recognition systems, often fail to fairly recognize or represent darker-skinned individuals due to biased training data and non-inclusive development practices.
       </p>
@@ -84,15 +84,15 @@
   <!-- 탭 3: Extended Reflection -->
   <div id="reflection" class="inner-tab-content">
     <section class="content">
-      <h2>🔍 Extended Reflection</h2>
+      <h2>Extended Reflection</h2>
       <p>
         This result closely mirrors Buolamwini’s findings in <em>Unmasking AI</em>, where facial recognition software struggled most with accurately identifying darker-skinned individuals, especially women. It was clear that despite our intention to create a balanced dataset, external factors (like lighting and camera bias) still shaped how the model interpreted skin color.
       </p>
       <p>
-        Throughout this process, Buolamwini’s framework of the “coded gaze” helped us make sense of our results. Her argument is that AI systems are never neutral—they reflect the assumptions, values, and limitations of those who design and train them. Even though we approached this project with a conscious effort to be inclusive, we still saw the classifier perform unevenly across different skin tones. This showed us that bias is not only about who is excluded, but also how easily human complexity gets flattened into rigid categories.
+        Throughout this process, Buolamwini’s framework of the “coded gaze” helped us make sense of our results. Her argument is that AI systems are never neutral, they reflect the assumptions, values, and limitations of those who design and train them. Even though we approached this project with a conscious effort to be inclusive, we still saw the classifier perform unevenly across different skin tones. This showed us that bias is not only about who is excluded, but also how easily human complexity gets flattened into rigid categories.
       </p>
       <p>
-        Buolamwini also critiques the myth of objectivity in AI. Her research reveals how many commercial AI systems are marketed as impartial, yet consistently fail in ways that disadvantage marginalized groups. Our project, though much smaller in scale, demonstrated this phenomenon. A model trained on limited data—especially without rigorous testing across diverse conditions—will not generalize well, and may replicate existing social inequalities.
+        Buolamwini also critiques the myth of objectivity in AI. Her research reveals how many commercial AI systems are marketed as impartial, yet consistently fail in ways that disadvantage marginalized groups. Our project, though much smaller in scale, demonstrated this phenomenon. A model trained on limited data, especially without rigorous testing across diverse conditions, will not generalize well, and may replicate existing social inequalities.
       </p>
       <p>
         We also reflected on Buolamwini’s emphasis on the need to participate in shaping AI. Most machine learning systems today are developed by relatively homogeneous teams, often without meaningful input from the communities most affected by these technologies. Our group discussed how this dynamic applies even to a classroom setting. If we, as students, aren’t trained to think critically about bias and representation in tech, we risk contributing to these problems in our future careers.
@@ -196,7 +196,7 @@
       tabLinks.forEach(link => link.classList.remove('active'));
       tabContents.forEach(content => content.classList.remove('active'));
 
-      // Add 'active' class to the clicked tab and corresponding content
+      // 'active' class to the clicked tab and corresponding content
       this.classList.add('active');
       const target = this.getAttribute('data-tab');
       const activeTab = document.getElementById(target);
