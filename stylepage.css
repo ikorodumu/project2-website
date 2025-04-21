@@ -274,5 +274,21 @@ footer {
   font-weight: bold;
   text-decoration: underline;
 }
+.custom-btn {
+  background-color: #007bff; /* Bootstrap blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* darker blue on hover */
+}
 
 
