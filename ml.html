@@ -140,11 +140,11 @@
 <script>
   const URL = "https://teachablemachine.withgoogle.com/models/ndVbPy1ak/";
   let model, webcam, labelContainer, maxPredictions;
+  let count = 0;
 
   async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
-    let count = 0;
 
     try {
       model = await tmImage.load(modelURL, metadataURL);
