@@ -145,9 +145,8 @@
   async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
-    document.getElementByClass("start-button").disabled = true;
-
-    if (count < 1) {
+    document.getElementById("start-button").disabled = true;
+    
     try {
       model = await tmImage.load(modelURL, metadataURL);
       maxPredictions = model.getTotalClasses();
@@ -170,7 +169,6 @@
     } catch (error) {
       console.error("Webcam or model loading failed:", error);
       alert("Could not start model. Check if camera permissions are allowed and you're using HTTPS.");
-    }
     }
   }
 
